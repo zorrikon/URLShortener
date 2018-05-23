@@ -38,7 +38,7 @@ def get_unique_urlsafe_string():
 def home():
     if flask.request.method == "GET":
         return flask.render_template("index.html")
-    # else POST request
+    # POST request which creates the short_url given a URL.
     url = flask.request.form.get("url")
     if not urllib.parse.urlparse(url).scheme:
         url = "http://" + url
